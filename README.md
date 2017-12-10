@@ -13,16 +13,16 @@ There are seven files in this repository:
 - `final_analysis.R` - code to generate the facts and figures in the article.
 - `graphics.R` - code to build the graphics.
 
-# Credits:
+# Credits
 
 Data analysis and graphics: Rob Arthur and Allison McCann.
 
 Reporting: Rob Arthur, Taylor Dolven, Keegan Hamilton, Allison McCann,
 and Carter Sherman.
 
-# License:
+# License
 
-This code and data is published under an [Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+This data and code is published under an [Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 Questions/comments/corrections: [email Allison McCann](mailto:allison.mccann@vice.com).
 
