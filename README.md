@@ -13,6 +13,22 @@ There are seven files in this repository:
 - `final_analysis.R` - code to generate the facts and figures in the article.
 - `graphics.R` - code to build the graphics.
 
+# Variables
+
+Race:
+- W: White, non-Hispanic
+- B: Black, non-Hispanic
+- A: Asian
+- L: Latino
+- O: Other
+- U: Unknown
+
+
+Gender:
+- M: Male
+- F: Female
+- U: Unknown
+
 # Credits
 
 Data analysis and graphics: Rob Arthur and Allison McCann.
@@ -25,7 +41,3 @@ and Carter Sherman.
 This data and code is published under an [Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 Questions/comments/corrections: [email Allison McCann](mailto:allison.mccann@vice.com).
-
-
-
-
