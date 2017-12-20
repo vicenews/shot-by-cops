@@ -1,3 +1,4 @@
+
 ##Processing and Standardizing.
 ##libraries
 library(lubridate)
@@ -214,6 +215,18 @@ dat$SubjectRace[dat$SubjectRace=="Native American"] <- ""
 dat$SubjectRace[dat$SubjectRace=="Pending"] <- ""
 dat$SubjectRace <- gsub("H", "L", dat$SubjectRace)
 dat$SubjectRace <- gsub("Unknown", "U", dat$SubjectRace)
+
+#recoding gender!
+dat$SubjectGender <- gsub("MALE", "M", toupper(dat$SubjectGender))
+dat$SubjectGender <- gsub("FEMALE", "F", toupper(dat$SubjectGender))
+dat$SubjectGender <- gsub("FEM", "F", toupper(dat$SubjectGender))
+dat$SubjectGender <- gsub("B", "U", toupper(dat$SubjectGender))
+dat$SubjectGender <- gsub("UNKNOWN", "U", toupper(dat$SubjectGender))
+dat$SubjectGender <- gsub("OTHER", "U", toupper(dat$SubjectGender))
+dat$SubjectGender <- gsub(",", ";", toupper(dat$SubjectGender))
+dat$SubjectGender <- gsub(" ", "", toupper(dat$SubjectGender))
+dat$SubjectGender[dat$SubjectGender==""] <- "U"
+dat$SubjectGender[is.na(dat$SubjectGender)] <- "U"
 
 #recoding "subject armed" field
 dat$Notes <- as.character(dat$Notes)
