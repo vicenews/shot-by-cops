@@ -13,7 +13,7 @@ subject_db <- read.csv("subject_data.csv")
 
 #parse dates
 full_db$fdate <- parse_date_time(full_db$fdate, "%m/%d/%y")
-subject_db$fdate <- parse_date_time(subject_db$fdate, "%m/%d/%Y")
+subject_db$fdate <- parse_date_time(subject_db$Date, "%m/%d/%Y")
 
 #### GRAPHIC: COUNTS OF ALL SUBJECTS #####
 
