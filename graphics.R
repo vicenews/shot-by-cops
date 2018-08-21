@@ -352,10 +352,11 @@ print(ratesByRaceChart)
 ### CHART: ARMED BY RACE###
 
 #exclude cities for which we have insufficent armed data
+#filter cities with insufficient race data
 armedRace_clean <-
   filter(
     subject_db,
-    !city %in% c(
+    !City %in% c(
       "Chicago",
       "Tampa",
       "City of Miami",
@@ -369,13 +370,9 @@ armedRace_clean <-
       "Columbus",
       "Cleveland"
     )
-  )
-
-#filter cities with insufficient race data
-armedRace_clean2 <-
+  ) %>% 
   filter(
-    armedRace_clean,
-    !city %in% c(
+    !City %in% c(
       "Philadelphia",
       "Detroit",
       "Atlanta",
@@ -397,16 +394,17 @@ armedRace_clean2 <-
 
 #how many cities left
 armedRace_cities <-
-  armedRace_clean2 %>% group_by(city) %>% summarize(total = n())
+  armedRace_clean %>% group_by(City) %>% summarize(total = n())
 
 #check for SubjectRace NAs, turn into U
-armedRace_NAs <- filter(armedRace_clean2, is.na(SubjectRace))
-armedRace_clean2$SubjectRace[is.na(armedRace_clean2$SubjectRace)] <-
+armedRace_NAs <- filter(armedRace_clean, is.na(SubjectRace))
+armedRace_clean$SubjectRace[is.na(armedRace_clean$SubjectRace)] <-
   "U"
 
 #armed and race totals
+#Weapon not present
 armedRace_counts <-
-  armedRace_clean2 %>%  group_by(SubjectRace, weapon) %>% summarize(total =
+  armedRace_clean %>%  group_by(SubjectRace, weapon) %>% summarize(total =
                                                                       n())
 
 #get percentage of subjects Armed
