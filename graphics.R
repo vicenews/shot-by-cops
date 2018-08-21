@@ -46,12 +46,14 @@ waffle(subjects, rows=45, size=0.5,
 
 #### GRAPHIC: FATAL, NONFATAL, UNKNOWN SUBJECTS OVER TIME #####
 
-#count fatal vs. non-fatal by year 
-subject_counts_byyear <- subject_db %>% group_by(year, Fatal) %>%
-  summarize(total=n())
+#count fatal vs. non-fatal by year
+subject_counts_byyear <-
+  subject_db %>% group_by(year = year(fdate), Fatal) %>%
+  summarize(total = n())
 
-subject_counts_byyear_all <- subject_db %>% group_by(year) %>%
-  summarize(total=n())
+subject_counts_byyear_all <-
+  subject_db %>% group_by(year = year(fdate)) %>%
+  summarize(total = n())
 
 #get yearly totals
 y2010 <- filter(subject_counts_byyear_all, year==2010)
