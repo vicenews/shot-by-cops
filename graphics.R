@@ -8,7 +8,6 @@ require('waffle')
 require('zoo')
 
 #set directory, load data
-setwd("~/Desktop/shot-by-cops/")
 full_db <- read.csv("incident_data.csv")
 subject_db <- read.csv("subject_data.csv")
 
