@@ -311,7 +311,7 @@ subject_db_clean <-
   )
 
 #get rid of NA SubjectRace
-subject_db_race <- filter(subject_db_clean, tr == TRUE)
+subject_db_race <- filter(subject_db_clean, !is.na(SubjectRace))
 
 #count subjects by race
 subject_counts_race <-
